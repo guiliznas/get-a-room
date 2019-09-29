@@ -1,19 +1,23 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
 const RoomSchema = new Schema({
-    code: {
-        type: Schema.Types.String,
-        required: 'Code is required',
-        unique: true
-    },
-    name: {
-        type: Schema.Types.String,
-    },
-    locale: {
-        type: Schema.Types.String,
-    },
+  //   id: {
+  //     type: Schema.Types.String,
+  //     required: "Code is required",
+  //     unique: true
+  //   },
+  name: {
+    type: Schema.Types.String
+  },
+  locale: {
+    type: Schema.Types.String
+  },
+  use: {
+    type: Schema.Types.Boolean,
+    default: false
+  }
 });
 
-module.exports = mongoose.model('Room', RoomSchema);
+module.exports = mongoose.model("Room", RoomSchema);
